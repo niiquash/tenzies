@@ -1,6 +1,18 @@
-import React from "react";
+import { useState, useEffect } from "react";
+import Die from "./components/Die";
 
 const App = () => {
+  const generateAllNewDice = () => {
+    return new Array(10).fill(0).map(() => Math.ceil(Math.random() * 6));
+  };
+
+  const [dice, setDice] = useState(generateAllNewDice());
+
+  const diceElements = dice.map((num, idx) => <Die key={idx} value={num} />);
+
+  const getNewDice = () => {
+    setDice(generateAllNewDice());
+  };
   return (
     <main className="main">
       <section className="main__instructions">
@@ -11,20 +23,11 @@ const App = () => {
         </p>
       </section>
 
-      <div className="main__dice--container">
-        <div className="main__dice">1</div>
-        <div className="main__dice">2</div>
-        <div className="main__dice">3</div>
-        <div className="main__dice">4</div>
-        <div className="main__dice">5</div>
-        <div className="main__dice">6</div>
-        <div className="main__dice">7</div>
-        <div className="main__dice">8</div>
-        <div className="main__dice">9</div>
-        <div className="main__dice">10</div>
-      </div>
+      <div className="main__dice--container">{diceElements}</div>
 
-      <button className="main__roll--button">Roll</button>
+      <button onClick={getNewDice} className="main__roll--button">
+        Roll
+      </button>
     </main>
   );
 };
