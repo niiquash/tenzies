@@ -1,35 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+    <main className="main">
+      <section className="main__instructions">
+        <h2>Tenzies</h2>
         <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
+          Roll until all dice are the same. Click each die to freeze it at its
+          current values between rolls.
         </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+      </section>
 
-export default App
+      <div className="main__dice--container">
+        <div className="main__dice">1</div>
+        <div className="main__dice">2</div>
+        <div className="main__dice">3</div>
+        <div className="main__dice">4</div>
+        <div className="main__dice">5</div>
+        <div className="main__dice">6</div>
+        <div className="main__dice">7</div>
+        <div className="main__dice">8</div>
+        <div className="main__dice">9</div>
+        <div className="main__dice">10</div>
+      </div>
+
+      <button className="main__roll--button">Roll</button>
+    </main>
+  );
+};
+
+export default App;
