@@ -15,11 +15,11 @@ body {
 
 .main {
   margin-top: 5rem;
-  padding: 33px 34px;
-  width: 320px;
-  height: 320px;
+  padding: 40px 40px; /* Increased padding */
+  width: 400px; /* Increased width */
+  height: 400px; /* Increased height */
   background: #f5f5f5;
-  border-radius: 10px;
+  border-radius: 12px; /* Slightly larger border radius */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,46 +30,46 @@ body {
   text-align: center;
   font-family: "Karla", serif;
   font-weight: 700;
-  font-size: 25.6px;
-  line-height: 29.93px;
+  font-size: 28px; /* Increased font size */
+  line-height: 32px; /* Increased line height */
   margin-top: 0;
-  margin-bottom: 7px;
-  letter-spacing: -1px;
+  margin-bottom: 10px; /* Adjusted margin */
+  letter-spacing: -0.5px;
   color: #2b283a;
 }
 
 .main__instructions p {
   font-weight: 400;
-  font-size: 13.11px;
-  line-height: 15.86px;
+  font-size: 15px; /* Increased font size */
+  line-height: 18px; /* Increased line height */
   text-align: center;
   color: #4a4e74;
   margin-top: 0;
-  margin-bottom: 23px;
+  margin-bottom: 25px; /* Adjusted margin */
 }
 
 .main__dice--container {
   width: 100%;
   display: grid;
   grid-template: auto auto / repeat(5, 1fr);
-  gap: 17px;
-  margin-bottom: 25px;
+  gap: 20px; /* Increased gap */
+  margin-bottom: 30px; /* Adjusted margin */
 }
 
 .main__dice {
-  width: 36px;
-  height: 36px;
+  width: 45px; /* Increased width */
+  height: 45px; /* Increased height */
   border: none;
-  border-radius: 4px;
-  padding: 6.4px 14.49px;
+  border-radius: 6px; /* Slightly larger border radius */
+  padding: 8px 16px; /* Increased padding */
   background-color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2); /* Slightly larger shadow */
   cursor: pointer;
   font-family: "Karla", serif;
-  font-size: 20.59px;
+  font-size: 24px; /* Increased font size */
   font-weight: 700;
 }
 
@@ -81,13 +81,13 @@ body {
   white-space: nowrap;
   width: auto;
   height: auto;
-  padding: 6px 21px;
-  border-radius: 4px;
+  padding: 8px 24px; /* Increased padding */
+  border-radius: 6px; /* Slightly larger border radius */
   background-color: #5035ff;
   color: #ffffff;
   font-family: "Karla", serif;
   font-weight: 700;
-  font-size: 16.38px;
-  line-height: 19px;
+  font-size: 18px; /* Increased font size */
+  line-height: 21px; /* Adjusted line height */
   cursor: pointer;
 }

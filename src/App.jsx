@@ -2,8 +2,11 @@ import { useState } from "react";
 import Die from "./components/Die";
 import { nanoid } from "nanoid";
 import ReactConfetti from "react-confetti";
+import { useWindowSize } from "react-use";
 
 const App = () => {
+  const { width, height } = useWindowSize();
+
   const generateAllNewDice = () => {
     return new Array(10).fill(0).map(() => ({
       id: nanoid(),
@@ -49,7 +52,7 @@ const App = () => {
 
   return (
     <main className="main">
-      {gameWon && <ReactConfetti />}
+      {gameWon && <ReactConfetti width={width} height={height} />}
       <section className="main__instructions">
         <h2>Tenzies</h2>
         <p>
