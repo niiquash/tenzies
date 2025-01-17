@@ -4,9 +4,6 @@ import { nanoid } from "nanoid";
 import ReactConfetti from "react-confetti";
 
 const App = () => {
-  const confetti = () => {
-    return <ReactConfetti />;
-  };
   const generateAllNewDice = () => {
     return new Array(10).fill(0).map(() => ({
       id: nanoid(),
@@ -15,18 +12,20 @@ const App = () => {
     }));
   };
 
-  const [dice, setDice] = useState(generateAllNewDice());
+  const [dice, setDice] = useState(() => generateAllNewDice());
 
   const gameWon =
     dice.every((die) => die.isHeld) &&
     dice.every((die) => die.value === dice[0].value);
 
   const rollDice = () => {
-    setDice((prevDice) =>
-      prevDice.map((die) =>
-        !die.isHeld ? { ...die, value: Math.ceil(Math.random() * 6) } : die
-      )
-    );
+    gameWon
+      ? setDice(generateAllNewDice())
+      : setDice((prevDice) =>
+          prevDice.map((die) =>
+            !die.isHeld ? { ...die, value: Math.ceil(Math.random() * 6) } : die
+          )
+        );
   };
 
   const hold = (id) => {
@@ -50,7 +49,7 @@ const App = () => {
 
   return (
     <main className="main">
-      {gameWon && confetti()}
+      {gameWon && <ReactConfetti />}
       <section className="main__instructions">
         <h2>Tenzies</h2>
         <p>
